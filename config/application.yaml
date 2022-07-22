@@ -1,0 +1,10 @@
+spring:
+  main:
+    web-application-type: none
+  datasource:
+    url: jdbc:oracle:thin:@192.168.6.220:1521:esb
+    username: esb
+    password: esb
+
+logging:
+  config: config/log4j2.xml
