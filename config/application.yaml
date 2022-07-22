@@ -1,10 +1,23 @@
 spring:
-  main:
-    web-application-type: none
+  #  main:
+  #    web-application-type: none
+  profiles:
+    active: production
   datasource:
     url: jdbc:oracle:thin:@192.168.6.220:1521:esb
     username: esb
     password: esb
 
+server:
+  port: 8089
+
 logging:
   config: config/log4j2.xml
+
+mq:
+  host: localhost
+  port: 1414
+  queue-manager: QM1
+  queue: Q1
+  channel: CH1
+  receive-timeout: 2000
