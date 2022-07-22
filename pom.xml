@@ -78,16 +78,6 @@
             <scope>test</scope>
         </dependency>
 
-        <!--&lt;!&ndash;spring boot jms &ndash;&gt;
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-activemq</artifactId>
-        </dependency>
-        &lt;!&ndash;jms-api &ndash;&gt;
-        <dependency>
-            <groupId>javax.jms</groupId>
-            <artifactId>javax.jms-api</artifactId>
-        </dependency>-->
         <!--ibm mq -->
         <dependency>
             <groupId>com.ibm.mq</groupId>
