@@ -1,0 +1,27 @@
+version: '3'
+services:
+  ibm-mq:
+    image: 'ibmcom/mq:latest'
+    container_name: ibm-mq
+    ports:
+      - "1414:1414"
+      - "9443:9443"
+    environment:
+      - LICENSE=accept
+      - MQ_QMGR_NAME=QM1
+      - MQ_APP_PASSWORD=passwOrd
+    volumes:
+      - "./ibm-mq/20-config.mqsc:/etc/mqm/20-config.mqsc"
+  esb-db:
+    image: mysql:latest
+    container_name: esb-db
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: esb
+      MYSQL_DATABASE: esb
+      MYSQL_USER: esb
+      MYSQL_PASSWORD: esb
+    volumes:
+      - "./database/schema.sql:/docker-entrypoint-initdb.d/1.sql"
+      - "./database/data.sql:/docker-entrypoint-initdb.d/2.sql"
