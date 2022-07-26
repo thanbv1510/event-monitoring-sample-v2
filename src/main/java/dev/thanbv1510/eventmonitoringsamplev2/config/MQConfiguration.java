@@ -1,7 +1,6 @@
 package dev.thanbv1510.eventmonitoringsamplev2.config;
 
 import com.ibm.mq.jms.MQQueueConnectionFactory;
-import com.ibm.msg.client.wmq.WMQConstants;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Bean;
@@ -10,6 +9,8 @@ import org.springframework.context.annotation.Primary;
 import org.springframework.jms.connection.CachingConnectionFactory;
 import org.springframework.jms.core.JmsOperations;
 import org.springframework.jms.core.JmsTemplate;
+
+import static com.ibm.msg.client.wmq.common.CommonConstants.WMQ_CM_CLIENT;
 
 @Slf4j
 @Configuration
@@ -22,7 +23,7 @@ public class MQConfiguration {
         MQQueueConnectionFactory mqQueueConnectionFactory = new MQQueueConnectionFactory();
         mqQueueConnectionFactory.setHostName(mqProperties.getHost());
         try {
-            mqQueueConnectionFactory.setTransportType(WMQConstants.WMQ_CM_CLIENT);
+            mqQueueConnectionFactory.setTransportType(WMQ_CM_CLIENT);
             mqQueueConnectionFactory.setCCSID(1208);
             mqQueueConnectionFactory.setChannel(mqProperties.getChannel());
             mqQueueConnectionFactory.setPort(mqProperties.getPort());

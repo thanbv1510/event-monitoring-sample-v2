@@ -58,7 +58,7 @@ public class XmlUtils {
                  | IOException
                  | XPathExpressionException
                  | XPathFactoryConfigurationException e) {
-            log.error("Ex: ", e);
+            log.error("Ex: {}", e.getMessage());
             return "";
         }
     }
