@@ -1,6 +1,6 @@
 spring:
-  #  main:
-  #    web-application-type: none
+  main:
+    web-application-type: none
   profiles:
     active: production
   datasource:
@@ -21,3 +21,27 @@ mq:
   queue: Q1
   channel: CH1
   receive-timeout: 2000
+
+jms-listener:
+  concurrency: 5-10
+
+isdn-analyzer:
+  initial-delay: 30000
+  fixed-delay: 30000
+
+log-insert:
+  batch-size: 500
+  retry-time: 3
+  retry-sleep: 1000
+  pool:
+    core-size: 5
+
+log-listening:
+  pool:
+    min-size: 5
+    max-size: 10
+    queue-capacity: 200000
+
+async-monitor:
+  initial-delay: 30000
+  fixed-delay: 30000

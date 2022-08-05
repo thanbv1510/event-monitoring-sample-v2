@@ -6,3 +6,13 @@
 $ chmod +x setup-env.sh
 $ ./setup-env.sh
 ```
+
+## Build and deployment
+### Window
+```powershell
+.\mvnw clean install -DskipTests
+```
+### Linux
+```bash
+$ ./mvnw clean install -DskipTests
+```
